@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="jela">
+        <item>Sopska salata</item>
+        <item>Cezar salata</item>
+        <item>Tuna salata</item>
+        <item>Vegeterijana salata</item>
+    </string-array>
+    
+</resources>

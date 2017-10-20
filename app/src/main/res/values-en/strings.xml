@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Activities</string>
+    <string name="first_activity_name">FirstActivity</string>
+    <string name="second_activity_name">SecondActivity</string>
+
+</resources>
