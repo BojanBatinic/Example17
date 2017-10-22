@@ -48,16 +48,16 @@
         android:id="@+id/tv_cena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_kalorijskaVrednost"
+        android:layout_toRightOf="@id/iv_image"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/tv_sastojci"/>
+        android:layout_below="@id/tv_kalorijskaVrednost"/>
 
     <!-- Spinners provide a quick way to select one value from a set. -->
     <Spinner
         android:id="@+id/sp_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_kalorijskaVrednost"
+        android:layout_below="@id/tv_cena"
         android:layout_alignParentLeft="true"/>
 
 
@@ -66,7 +66,7 @@
         android:id="@+id/btn_buy"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_cena"
+        android:layout_below="@id/sp_category"
         android:layout_centerHorizontal="true"
         android:text="Narucite" />
 

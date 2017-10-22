@@ -2,21 +2,12 @@ package rs.aleph.android.example16.activities;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import java.util.List;
 
 import rs.aleph.android.example16.R;
 import rs.aleph.android.example16.fragments.DetailFragment;
 import rs.aleph.android.example16.fragments.ListFragment;
-import rs.aleph.android.example16.provider.ProviderJelo;
 
 // Each activity extends Activity class
 public class FirstActivity extends Activity implements ListFragment.OnItemSelectedListener{
@@ -40,7 +31,7 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 			// FragmentTransaction is a set of changes (e.g. adding, removing and replacing fragments) that you want to perform at the same time.
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
 			ListFragment listFragment = new ListFragment();
-			ft.add(R.id.master_view, listFragment, "Master_Fragment_1");
+			ft.add(R.id.list_view, listFragment, "List_Fragment_1");
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 			ft.commit();
 		}
@@ -59,6 +50,7 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 				ft.commit();
 			}
 		}
+
 	}
 
 	// onStart method is a lifecycle method called after onCreate (or after onRestart when the
@@ -135,6 +127,7 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 
 	@Override
 	public void OnItemSelected(int position) {
+
 		if (landscape) {
 			// If the device is in the landscape mode updates detail fragment's content.
 			DetailFragment detailFragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detail_view);
@@ -144,7 +137,7 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 			DetailFragment detailFragment = new DetailFragment();
 			detailFragment.setContent(position);
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
-			ft.replace(R.id.master_view, detailFragment, "Detail_Fragment_2");
+			ft.replace(R.id.list_view, detailFragment, "Detail_Fragment_2");
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 			ft.addToBackStack(null);
 			ft.commit();

@@ -21,36 +21,37 @@ import rs.aleph.android.example16.provider.ProviderJelo;
 
 public class ListFragment extends Fragment {
 
-    AdapterView.OnItemSelectedListener listener;
+    OnItemSelectedListener listener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+
         super.onActivityCreated(savedInstanceState);
 
         final List<String> jeloNazivi = ProviderJelo.getJelaNazivi();
 
         // Creates an ArrayAdaptar from the array of String
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, jeloNazivi);
-        ListView listView = (ListView) findViewById(R.id.listofjela);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item, jeloNazivi);
+        ListView listView = (ListView) getActivity().findViewById(R.id.listofJela);
 
         // Assigns ArrayAdaptar to ListView
         listView.setAdapter(dataAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                listener.onItemSelected(position);
+                listener.OnItemSelected(position);
             }
         });
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
 
         if (container == null) {
             return null;
@@ -63,12 +64,14 @@ public class ListFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+
         super.onDestroyView();
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+
         try {
             listener = (OnItemSelectedListener) activity;
         } catch (ClassCastException e) {
@@ -77,6 +80,7 @@ public class ListFragment extends Fragment {
     }
 
     public interface OnItemSelectedListener {
+
         public void OnItemSelected(int position);
     }
 }

@@ -11,6 +11,7 @@
         <!-- Declares 1st (main) activity. Action "MAIN" and category "LAUNCHER" properties
        makes it visible in the application launcher -->
         <activity
+            android:configChanges="orientation"
             android:name=".activities.FirstActivity"
             android:label="@string/first_activity_name"
             android:icon="@mipmap/ic_launcher">

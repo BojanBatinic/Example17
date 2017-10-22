@@ -6,7 +6,7 @@
 
     <!-- Declares a button that starts 2nd activity -->
     <FrameLayout
-        android:id="@+id/master_view"
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

@@ -7,7 +7,7 @@
     <!-- FrameLayout is designed to block out an area on the screen to display a single item.
     Generally, FrameLayout should be used to hold a single child view. -->
     <FrameLayout
-        android:id="@+id/master_view"
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
